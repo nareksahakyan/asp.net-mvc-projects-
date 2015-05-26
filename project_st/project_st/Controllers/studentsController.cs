@@ -27,6 +27,12 @@ namespace project_st.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            if (id == (db.Students.ToList().Count + 1))
+            { id = 1; }
+            if (id == 0)
+            { id = db.Students.ToList().Count; }
+
             Student student = db.Students.Find(id);
             if (student == null)
             {
@@ -34,6 +40,7 @@ namespace project_st.Controllers
             }
             return View(student);
         }
+       
 
         // GET: /students/Create
         public ActionResult Create()

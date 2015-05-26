@@ -38,5 +38,10 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index")     
+</p>
+<p>
+    @Html.ActionLink("Back", "Details", new { id = Model.id - 1 }) | 
+    @Html.ActionLink("Next", "Details", new { id = Model.id + 1 })
+    
 </p>
